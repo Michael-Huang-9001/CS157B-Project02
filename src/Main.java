@@ -66,30 +66,30 @@ public class Main {
 				resultSet = statement.executeQuery();
 				while (resultSet.next()) {
 					maxUserID = resultSet.getInt("customer_ID");
-					System.out.println("PK user_ID: " + maxUserID);
 					if (maxUserID == 0) {
 						maxUserID = 1;
 					}
+					System.out.println("PK user_ID: " + maxUserID);
 				}
 
 				statement = connection.prepareStatement("SELECT max(item_ID) as item_ID FROM items;");
 				resultSet = statement.executeQuery();
 				while (resultSet.next()) {
 					maxItemID = resultSet.getInt("item_ID");
-					System.out.println("PK item_ID: " + maxItemID);
 					if (maxItemID == 0) {
 						maxItemID = 1;
 					}
+					System.out.println("PK item_ID: " + maxItemID);
 				}
 
 				statement = connection.prepareStatement("SELECT max(sales_ID) as sales_ID FROM sales;");
 				resultSet = statement.executeQuery();
 				while (resultSet.next()) {
 					maxSalesID = resultSet.getInt("sales_ID");
-					System.out.println("PK sales_ID: " + maxSalesID);
 					if (maxSalesID == 0) {
 						maxSalesID = 1;
 					}
+					System.out.println("PK sales_ID: " + maxSalesID);
 				}
 			}
 
